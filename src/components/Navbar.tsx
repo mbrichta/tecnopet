@@ -4,16 +4,16 @@ import useWindowSize from "../hooks/useWindowSize";
 
 const Navbar: FC = () => {
   const [isSmallViewport, setIsSmallViewport] = useState(false);
-  const { width } = useWindowSize();
   const [isHidden, setIsHidden] = useState<boolean>(false);
+  const { width } = useWindowSize();
 
   useEffect(() => {
     if (!width) return;
-    if (width <= 700) {
+    if (width <= 767) {
       setIsHidden(true);
       setIsSmallViewport(true);
     } else {
-      setIsHidden(true);
+      setIsHidden(false);
       setIsSmallViewport(false);
     }
   }, [width]);
@@ -43,21 +43,21 @@ const Navbar: FC = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </button>
         <div
           className={clsx(
-            "bg-white  w-full block md:w-auto dark:bg-gray-900",
-            isHidden && "hidden",
-            isSmallViewport && !isHidden && "absolute top-14 left-0"
+            "xs:absolute mt-3 md:mt-0 top-14 left-0 md:initial bg-white  w-full block md:w-auto dark:bg-gray-900",
+            isHidden && "hidden"
+            // isSmallViewport && !isHidden && ""
           )}
           id="navbar-default"
         >
-          <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col p-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <a
                 href="#"
