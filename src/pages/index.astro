@@ -1,14 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import Navbar from '../components/Navbar';
-import AboutSection from '../components/AboutSection.astro';
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import Navbar from "../components/Navbar";
+import AboutSection from "../components/AboutSection.astro";
+import Clients from "../components/Clients.astro";
 ---
 
 <Layout title="Tecnopet">
-	<main class="bg-gray-200 flex flex-col w-full min-h-screen">
-		<Navbar client:load/>
-		<HeroSection />
-		<AboutSection />
-	</main>
+  <main class="bg-gray-200 flex flex-col w-full min-h-screen">
+    <Navbar client:load />
+    <HeroSection />
+    <AboutSection />
+    <Clients />
+  </main>
 </Layout>
