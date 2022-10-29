@@ -1,0 +1,35 @@
+---
+import { Image } from "@astrojs/image/components";
+export interface Props {}
+
+// const { href, title, body } = Astro.props;
+---
+
+<section
+  id="about-us"
+  class="snap-y bg-white px-10 py-5 flex flex-col-reverse md:flex-row justify-center gap-6 h-[100vh] w-full items-center"
+>
+  <div class="w-full lg:w-1/2 flex justify-center">
+    <div class="w-full md:w-9/12">
+      <h2 class="text-2xl font-bold">Quienes Somos</h2>
+      <p>
+        Tecnopet de Venezuela, C.A. es una empresa venezolana, que cuenta con
+        más diez años de experiencia en la fabricación y distribución de
+        botellas de PET para la industria del embotellado.
+      </p>
+      <button class="mt-4 px-4 py-3 rounded-lg bg-cyan-900 text-white"
+        >Contacto</button
+      >
+    </div>
+  </div>
+  <div class="w-full lg:w-1/2 flex justify-center">
+    <div class="w-full md:w-10/12">
+      <img
+        alt="Imagen de una persona agarrando una botella"
+        src={"/images/about-img.png"}
+        height={200}
+        class="rounded-xl shadow-lg"
+      />
+    </div>
+  </div>
+</section>
