@@ -181,7 +181,7 @@
 
   /* Testimonials */
   .testimonials-area .testimonial-content {
-    border-left: 2px solid #ff3514;
+    border-left: 2px solid #0D5295;
     padding-left: 30px;
     margin-top: 30px;
   }
@@ -200,7 +200,7 @@
   }
 
   .services-area .services-box .nav-tabs li a.active {
-    background: #ff3514;
+    background: #0D5295;
     color: #ffffff;
   }
 
@@ -671,7 +671,7 @@
   }
 
   .services-area .services-box .nav-tabs li a.active {
-    background: #ff3514;
+    background: #0D5295;
     color: #ffffff;
   }
 
