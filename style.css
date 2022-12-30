@@ -56,6 +56,11 @@ Table of contents
 /*
 ** General Styles for HTML tags
 */
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
 
 * {
   padding: 0;
@@ -480,6 +485,7 @@ button, button:focus {
   position: absolute;
   right: 30px;
   top: 50%;
+  rotate: 90deg;
   margin-top: -7px;
   content: "";
   border-top: 7px solid transparent;
@@ -555,7 +561,6 @@ button, button:focus {
 }
 
 .btn.btn-light {
-  background: #ffffff none repeat scroll 0 0;
   border: 2px solid #ffffff !important;
   color: #232323;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -1672,7 +1677,7 @@ body,
     display: inline-block;
     position: relative;
     z-index: 1;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 25px;
 }
@@ -1878,7 +1883,7 @@ body,
   position: absolute;
   left: -125px;
   bottom: -50px;
-  background: #ffffff;
+  background: #f7f7f7;
   box-shadow: 0 5px 30px 0 rgba(214, 215, 216, 0.57);
   height: 250px;
   width: 250px;
@@ -3724,6 +3729,7 @@ body,
 
 
 /* Portfolio Effect */
+
 .portfolio-area .item .thumb img {
   max-width: 100%;
   position: relative;
@@ -3732,8 +3738,8 @@ body,
 }
 
 .portfolio-area .item .thumb:hover img {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .portfolio-area .item .thumb:hover img {
@@ -3742,8 +3748,8 @@ body,
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
   background-position: top;
-  -webkit-filter: grayscale(0.4) blur(2px);
-  filter: grayscale(0.4) blur(2px);
+  -webkit-filter: grayscale(0.4) blur(0px);
+  filter: grayscale(0.4) blur(0px);
   -moz-transition-property: all;
   -o-transition-property: all;
   -webkit-transition-property: all;
@@ -3858,15 +3864,16 @@ body,
 }
 
 .clients-area .left-info h4::after {
+  display: none;
   position: absolute;
   left: 0;
   bottom: 0;
   content: "";
-  height: 10px;
+  height: 6px;
   width: 100%;
   background: #0D5295;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 .clients-area .left-info p {
@@ -5112,7 +5119,6 @@ i.fas.fa-calendar {
 .contact-area .contact-items .right-item {
   padding: 50px;
   background: #022147 none repeat scroll 0 0 !important;
-  padding-left: 65px;
   position: relative;
   z-index: 1;
 }
