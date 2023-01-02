@@ -395,6 +395,7 @@
                             comments: $('#comments').val()
                         },
                         function(data) {
+                            console.log({data})
                             document.getElementById('message').innerHTML = data;
                             $('#message').slideDown('slow');
                             $('.contact-form img.loader').fadeOut('slow', function() {

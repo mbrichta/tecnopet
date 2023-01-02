@@ -42,7 +42,7 @@ if(get_magic_quotes_gpc()) {
 // Example $address = "joe.doe@yourdomain.com";
 
 //$address = "example@themeforest.net";
-$address = "mathias.brichta@hotmail.com";
+$address = "28mathias23@gmail.com";
 
 
 // Configuration option.
@@ -64,13 +64,12 @@ $e_reply = "You can contact $name via email, $email";
 
 $msg = wordwrap( $e_body . $e_content . $e_phone . $e_reply, 70 );
 
-$headers = "From: $email" . PHP_EOL;
-$headers .= "Reply-To: $email" . PHP_EOL;
-$headers .= "MIME-Version: 1.0" . PHP_EOL;
-$headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
-$headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
-if(mail($address, $e_subject, $msg, $headers)) {
+$headers = array("From" => $email, "Reply-To" => $email, "MIME-Version" => "0.1", "Content-type" => "text/html; charset=ISO-8859-1");
+
+$success = mail($address, $e_subject, $msg, $headers);
+
+if($success) {
 
 	// Email has sent successfully, echo a success page.
 
