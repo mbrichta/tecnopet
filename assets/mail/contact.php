@@ -65,19 +65,33 @@ $msg = wordwrap( $e_body . $e_content . $e_phone . $e_reply, 70 );
 
 $headers = array("From" => $email, "Reply-To" => $email, "MIME-Version" => "0.1", "Content-type" => "text/html; charset=ISO-8859-1");
 
-$success = mail($address, $e_subject, $msg, $headers);
+$curl = curl_init();
+curl_setopt_array($curl, array(
+    CURLOPT_URL => $_ENV['TRUSTIFI_URL'] . "/api/i/v1/email",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => "{\"recipients\":[{\"email\":\"28mathias23@gmail.com\"}],\"title\":\"Title\",\"html\":\"Body\"}",
+    CURLOPT_HTTPHEADER => array(
+        "x-trustifi-key: " . $_ENV['TRUSTIFI_KEY'],
+        "x-trustifi-secret: " . $_ENV['TRUSTIFI_SECRET'],
+        "content-type: application/json"
+    )
+));
 
-if($success) {
-
-	// Email has sent successfully, echo a success page.
-
-	echo "<div class='alert alert-success'>";
+$response = curl_exec($curl);
+$err = curl_error($curl);
+curl_close($curl);
+if ($err) {
+    echo "cURL Error #:" . $err;
+} else {
+    echo "<div class='alert alert-success'>";
 	echo "<h3>Email Sent Successfully.</h3>";
 	echo "<p>Thank you <strong>$name</strong>, your message has been submitted to us.</p>";
 	echo "</div>";
-
-} else {
-
-	echo 'ERROR!';
-
 }
+?>
