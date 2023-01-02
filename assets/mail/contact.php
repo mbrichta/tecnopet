@@ -32,9 +32,7 @@ else if(trim($comments) == '') {
 	exit();
 }
 
-if(get_magic_quotes_gpc()) {
-	$comments = stripslashes($comments);
-}
+$comments = stripslashes($comments);
 
 
 // Configuration option.
