@@ -62,7 +62,7 @@ $e_reply = "You can contact $name via email, $email";
 
 $msg = wordwrap( $e_body . $e_content . $e_phone . $e_reply, 70 );
 $jsonMsg = array("recipients" => array("email" => $address, "title" => $e_subject, "html" => $msg));
-
+$json_data = '{"recipients":[[{"email":"28mathias23@gmail.com"}]], "title":"Contact Form", "html":"' . $msg . '"}';
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -74,7 +74,7 @@ curl_setopt_array($curl, array(
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => json_encode($jsonMsg),
+    CURLOPT_POSTFIELDS => $json_data,
     CURLOPT_HTTPHEADER => array(
         "x-trustifi-key: " . $_ENV['TRUSTIFI_KEY'],
         "x-trustifi-secret: " . $_ENV['TRUSTIFI_SECRET'],
