@@ -68,7 +68,7 @@ curl_setopt_array($curl, array(
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => $json_data,
+    CURLOPT_POSTFIELDS => "{\"recipients\":[{\"email\":\"28mathias23@gmail.com\" }], \"title\": \"Tecnopet Contact Form\", \"html\": \"" . $html ."\"}",
     CURLOPT_HTTPHEADER => array(
         "x-trustifi-key: " . $_ENV['TRUSTIFI_KEY'],
         "x-trustifi-secret: " . $_ENV['TRUSTIFI_SECRET'],
