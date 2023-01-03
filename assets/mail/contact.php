@@ -61,7 +61,7 @@ $e_phone = "Phone: $name" . PHP_EOL . PHP_EOL;
 $e_reply = "You can contact $name via email, $email";
 
 $msg = wordwrap( $e_body . $e_content . $e_phone . $e_reply, 70 );
-$jsonMsg = array("recipients" => array("email" => $address, "title" => $e_subject, "html" => $msg))
+$jsonMsg = array("recipients" => array("email" => $address, "title" => $e_subject, "html" => $msg));
 
 
 $curl = curl_init();
