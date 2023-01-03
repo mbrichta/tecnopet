@@ -1807,7 +1807,7 @@ nav.navbar.bootsnav {
   nav.navbar.bootsnav.navbar-fixed.navbar-transparent .logo-display, 
   nav.navbar.bootsnav.navbar-fixed.no-background .logo-display {
     display: block;
-    width: 200px;
+    width: 215px;
 
   }
 
@@ -1817,7 +1817,7 @@ nav.navbar.bootsnav {
 
   nav.navbar.bootsnav.navbar-fixed .logo-scrolled {
     display: block;
-    width: 200px;
+    width: 215px;
   }
 
   .attr-nav > ul > li.dropdown ul.dropdown-menu {

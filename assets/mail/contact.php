@@ -33,7 +33,7 @@ else if(trim($comments) == '') {
 }
 
 $comments = stripslashes($comments);
-$html = "You have been contacted by " . $name . ", their additional message is as follows: <br/>" . $comments . "<br/> Phone: " . $phone . "<br/> You can contact " . $name . "via email: " . $email;
+$html = "Has sido contactado por " . $name . ", su mensaje fue el siguiente: <br/>" . $comments . "<br/> Tlf: " . $phone . "<br/> Puedes contactar a " . $name . "via email: " . $email;
 $json_data = "{\"recipients\":[{\"email\":\"28mathias23@gmail.com\", \"title\": \"Contact Form\", \"html\": \"" . $html ."\"}]}";
 
 $curl = curl_init();

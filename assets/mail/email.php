@@ -9,7 +9,7 @@ function isEmail($email) {
 
 if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
-$email    = $_POST['email'];
+$email = $_POST['email'];
 
 if(!isEmail($email)) {
 	echo '<div class="alert alert-error">You must enter a valid email address.</div>';
