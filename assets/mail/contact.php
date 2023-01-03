@@ -62,7 +62,7 @@ $e_reply = "You can contact $name via email, $email";
 
 $msg = wordwrap( $e_body . $e_content . $e_phone . $e_reply, 70 );
 $jsonMsg = array("recipients" => array("email" => $address, "title" => $e_subject, "html" => $msg));
-$json_data = '{"recipients":[[{"email":"28mathias23@gmail.com"}]], "title":"Contact Form", "html":"' . $msg . '"}';
+$json_data = '{"recipients":[{"email":"28mathias23@gmail.com", "title": "Contact Form", "html": "' . $msg .'"}]}';
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
