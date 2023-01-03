@@ -55,8 +55,8 @@ $e_subject = 'Contact Form';
 // You can change this if you feel that you need to.
 // Developers, you may wish to add more fields to the form, in which case you must be sure to add them here.
 
-$html = "You have been contacted by" . $name . ", their additional message is as follows: <br/>" . $comments . "<br/> Phone: " . $phone . "<br/> You can contact " . $name . "via email: " . $email;
-$json_data = '{"recipients":[{"email":"28mathias23@gmail.com", "subject": "Contact Form", "html": "' . $html .'"}]}';
+$html = "You have been contacted by " . $name . ", their additional message is as follows: <br/>" . $comments . "<br/> Phone: " . $phone . "<br/> You can contact " . $name . "via email: " . $email;
+$json_data = "{\"recipients\":[{\"email\":\"28mathias23@gmail.com\", \"title\": \"Contact Form\", \"html\": \"" . $html ."\"}]}";
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
