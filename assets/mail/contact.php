@@ -84,7 +84,7 @@ if ($err) {
 } else {
     echo "<div class='alert alert-success' style='margin-top:10px'>";
 	echo "<h3>Mensaje enviado!</h3>";
-	echo "<p>Gracias por contactarnos <strong>$name</strong>, nos pondremos en contacto lo mas pronto posible.</p>";
+	echo "<p>Gracias por contactarnos <strong>$response</strong>, nos pondremos en contacto lo mas pronto posible.</p>";
 	echo "</div>";
 }
 ?>
