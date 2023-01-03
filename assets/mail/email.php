@@ -9,32 +9,14 @@ function isEmail($email) {
 
 if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
-$name     = $_POST['name'];
 $email    = $_POST['email'];
-$phone     = $_POST['phone'];
-$comments = $_POST['comments'];
 
-if(trim($name) == '') {
-	echo '<div class="alert alert-error">You must enter your name.</div>';
-	exit();
-} else if(trim($email) == '') {
-	echo '<div class="alert alert-error">You must enter email address.</div>';
-	exit();
-} else if(!isEmail($email)) {
+if(!isEmail($email)) {
 	echo '<div class="alert alert-error">You must enter a valid email address.</div>';
 	exit();
-} else if(trim($phone) == '') {
-	echo '<div class="alert alert-error">Please fill all fields!</div>';
-	exit();
-}
-else if(trim($comments) == '') {
-	echo '<div class="alert alert-error">You must enter your comments</div>';
-	exit();
 }
 
-$comments = stripslashes($comments);
-$html = "You have been contacted by " . $name . ", their additional message is as follows: <br/>" . $comments . "<br/> Phone: " . $phone . "<br/> You can contact " . $name . "via email: " . $email;
-$json_data = "{\"recipients\":[{\"email\":\"28mathias23@gmail.com\", \"title\": \"Contact Form\", \"html\": \"" . $html ."\"}]}";
+$html = "Una persona dejo su email: " . $email;
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -61,8 +43,7 @@ if ($err) {
     echo "cURL Error #:" . $err;
 } else {
     echo "<div class='alert alert-success' style='margin-top:10px'>";
-	echo "<h3>Mensaje enviado!</h3>";
-	echo "<p>Gracias por contactarnos <strong>$name</strong>, nos pondremos en contacto lo mas pronto posible.</p>";
+	echo "<p>Gracias por contactarnos, nos pondremos en contacto lo mas pronto posible.</p>";
 	echo "</div>";
 }
 ?>

@@ -317,59 +317,6 @@
     </div>
     <!-- End Chose Us -->
 
-    <!-- Start Clients Area
-    ============================================= -->
-    <!-- <div
-      class="clients-area default-padding-bottom"
-      style="background-color: #f5f5f5"
-    >
-      <div class="container">
-        <div class="clients-item-box">
-          <div class="row align-center">
-            <div class="col-lg-5 left-info">
-              <h4 style="margin-bottom: 5px">Nuestros Clientes</h4>
-              <p>Trabajamos con empresan de todos los tamaños.</p>
-            </div>
-            <div class="col-lg-7 clients-box">
-              <div class="clients-items owl-carousel owl-theme text-center">
-                <div class="single-item">
-                  <a href="#"
-                    ><img src="assets/img/150x80.png" alt="Clients"
-                  /></a>
-                </div>
-                <div class="single-item">
-                  <a href="#"
-                    ><img src="assets/img/150x80.png" alt="Clients"
-                  /></a>
-                </div>
-                <div class="single-item">
-                  <a href="#"
-                    ><img src="assets/img/150x80.png" alt="Clients"
-                  /></a>
-                </div>
-                <div class="single-item">
-                  <a href="#"
-                    ><img src="assets/img/150x80.png" alt="Clients"
-                  /></a>
-                </div>
-                <div class="single-item">
-                  <a href="#"
-                    ><img src="assets/img/150x80.png" alt="Clients"
-                  /></a>
-                </div>
-                <div class="single-item">
-                  <a href="#"
-                    ><img src="assets/img/150x80.png" alt="Clients"
-                  /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- End Clients Area -->
-
     <!-- Start botellas
     ============================================= -->
     <div id="productos" class="portfolio-area overflow-hidden default-padding">
@@ -377,7 +324,6 @@
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
             <div class="site-heading text-center">
-              <!-- <h4>Recent Work</h4> -->
               <h2>Nuestros productos</h2>
               <p>
                 Nuestras botellas están fabricadas con la materia prima PET
@@ -394,13 +340,6 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="gallery-content">
-                <!-- <div class="mix-item-menu text-center">
-                  <button class="active" data-filter="*">Todas</button>
-                  <button data-filter=".development">Limpieza</button>
-                  <button data-filter=".consulting">Bebidas</button>
-                </div> -->
-                <!-- End Mixitup Nav-->
-
                 <div class="masonary">
                   <div
                     id="portfolio-grid"
@@ -662,7 +601,11 @@
               <a href="#"><img src="assets/img/logo.png" alt="Logo" /></a>
             </div>
             <div class="subscribe-form col-lg-6">
-              <form action="#">
+              <form
+                class="email-form"
+                method="POST"
+                action="assets/mail/email.php"
+              >
                 <input
                   type="email"
                   name="email"
@@ -670,7 +613,10 @@
                   placeholder="Ingrese su correo electrónico aquí"
                   style="font-size: 14px"
                 />
-                <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                <button type="submit" name="submit" id="submit">
+                  <i class="fa fa-paper-plane"></i>
+                </button>
+                <div id="email-message" class="alert-msg"></div>
               </form>
             </div>
             <div class="col-lg-3 phone text-right">
@@ -753,32 +699,6 @@
         </div>
       </div>
       <!-- Fixed Shape -->
-
-      <!-- <div class="footer-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <p>
-                &copy; Copyright 2019. All Rights Reserved by
-                <a href="#">validthemes</a>
-              </p>
-            </div>
-            <div class="col-lg-6 text-right">
-              <ul>
-                <li>
-                  <a href="#">Terms of user</a>
-                </li>
-                <li>
-                  <a href="#">License</a>
-                </li>
-                <li>
-                  <a href="#">Support</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div> -->
       <!-- Start Footer Bottom -->
 
       <div class="fixed-shape">

@@ -395,10 +395,39 @@
                             comments: $('#comments').val()
                         },
                         function(data) {
-                            console.log({data})
                             document.getElementById('message').innerHTML = data;
                             $('#message').slideDown('slow');
                             $('.contact-form img.loader').fadeOut('slow', function() {
+                                $(this).remove()
+                            });
+                            $('#submit').removeAttr('disabled');
+                        }
+                    );
+                });
+                return false;
+            });
+        });
+
+        $('.email-form').each(function() {
+            var formInstance = $(this);
+            formInstance.submit(function() {
+
+                var action = $(this).attr('action');
+
+                $("#email-message").slideUp(750, function() {
+                    $('#email-message').hide();
+
+                    $('#submit')
+                        .after('<img src="assets/img/ajax-loader.gif" class="loader" />')
+                        .attr('disabled', 'disabled');
+
+                    $.post(action, {
+                            email: $('#email').val(),
+                        },
+                        function(data) {
+                            document.getElementById('email-message').innerHTML = data;
+                            $('#email-message').slideDown('slow');
+                            $('.email-form img.loader').fadeOut('slow', function() {
                                 $(this).remove()
                             });
                             $('#submit').removeAttr('disabled');
